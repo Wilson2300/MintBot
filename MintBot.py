@@ -4,18 +4,19 @@ import os
 
 client = discord.Client()
 
+
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("테스트"))
-    print("ready")
+    print("login")
     print(client.user.name)
     print(client.user.id)
+    print("--------------------:)
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("테스트"))
 
 @client.event
 async def on_message(message):
     if message.author.bot:
         return None
-
     if message.content == "!테스트":
         await message.channel.send("성공")
     if message.content.startswith == "근데 솔직히":
