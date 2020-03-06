@@ -17,9 +17,9 @@ async def on_ready():
 async def on_message(message):
     if message.author.bot:
         return None
-    if message.content == "!테스트":
+    if message.content("!테스트"):
         await message.channel.send("성공")
-    if message.content.startswith == "근데 솔직히":
+    if message.content.startswith("근데 솔직히"):
         await message.channel.send("인정합니다.")
 
 access_token = os.environ["BOT_TOKEN"]
