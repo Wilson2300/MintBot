@@ -1,6 +1,7 @@
-import discord, asyncio
+import discord
+import os
 
-token = "Njg1MzE0MTUwNzE2NTM4OTI5.XmG-Xw.9tQPrl9LzT628NNfpHTcJKnI2N0"
+
 client = discord.Client()
 
 @client.event
@@ -20,4 +21,5 @@ async def on_message(message):
     if message.content.startswith == "근데 솔직히":
         await message.channel.send("인정합니다.")
 
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
